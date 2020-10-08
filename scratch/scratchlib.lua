@@ -12,6 +12,8 @@ setmetatable(
 
 Scratch.json = require("./scratch/json")
 Scratch.projectWrapper = require("./scratch/projectwrapper")(Scratch)
+Scratch.md5 = require("./scratch/md5")
 
+print(Scratch.md5.sumhexa("wasdwb"))
 
 return Scratch
