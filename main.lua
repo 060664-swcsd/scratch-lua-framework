@@ -4,10 +4,10 @@ Scratch = require("./scratch/scratchlib")
 -- To start a project, you do:
 Scratch:startProject("Cool")
 
+-- Now, the PROJECT variable exists. You can access it with PROJECT or Scratch.CurrentProject
 -- Include scratch libraries
 PROJECT:include({'pen', 'makeymakey'})
 
--- Now, the PROJECT variable exists.
 PROJECT:sprite(
   -- This string can be 'backdrop' and we will automatically recognize it as the backdrop.
   "TheCoolGuy",
