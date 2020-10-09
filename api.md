@@ -17,3 +17,19 @@ Creates a new broadcast block.
 Whatever is called inside the wrapper function will affect the project.
 
 # Costumes, movement, and sprites
+Define these at the start of the project.
+### PROJECT:sprite(name: string, costumes: string/table<string>, table_of_sounds: table<string>, wrapper: function?)
+Defines a sprite. If path_to_img is a table, then the table should include paths to images as a dictionary. table_of_sounds should follow the same structure as the costume table.
+Example:
+```lua
+PROJECT:sprite(
+  "TheCoolGuy",
+  {
+    "costume1": "asd.png"
+  },
+  {},
+  function()
+    -- Do stuff here.
+  end
+)
+```

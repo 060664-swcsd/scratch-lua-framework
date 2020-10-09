@@ -1,18 +1,14 @@
 return function(Scratch)
 
   Scratch.debug = true
-  function Scratch:log(...)
+  function Scratch.log(...)
+    if not Scratch.debug then return end
     print("[Scratch]", ...)
   end
 
   function Scratch:startProject()
-    self:log("Starting project.")
-
-    if _G.PROJECT ~= nil then
-      error("There is already a project.")
-    end
-
-
+    assert( not _G.PROJECT )
+    _G.PROJECT = {}
   end
 
 end

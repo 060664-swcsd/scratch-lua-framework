@@ -2,15 +2,31 @@
 Scratch = require("./scratch/scratchlib")
 
 -- To start a project, you do:
-Scratch:startProject(function()
-  -- Inside this function, a new variable will exist named 'PROJECT'
-  PROJECT:onFlagPressed(function()
-    test = 0 -- Variables are stuck in it's own environment.
+Scratch:startProject("Cool")
 
-    Scratch:rep(PROJECT:contentsOf('test'))
-  end)
+-- Include scratch libraries
+PROJECT:include({'pen', 'makeymakey'})
 
-  PROJECT:stop({
-    name = "LUA Scratch!"
-  })
-end)
+-- Now, the PROJECT variable exists.
+PROJECT:sprite(
+  -- This string can be 'backdrop' and we will automatically recognize it as the backdrop.
+  "TheCoolGuy",
+  {
+    ["costume1"] = "asd.png"
+  },
+  {},
+  function()
+    local function move()
+      SPRITE:pointTo(Scratch:random(-180, 180))
+      Scratch:rep(10, function()
+        SPRITE:move(10)
+        Scratch:wait(0.1)
+      end)
+    end
+    
+    SPRITE:onBroadcast('asdasd', move)
+    SPRITE:onClick(move)
+  end
+)
+
+PROJECT:export("./output.sb3")
